@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "LoginViewController.h"
+@import FirebaseAuth;
 
 @interface ViewController ()
 
@@ -14,16 +16,22 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad {
+-(void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
 }
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self checkUserStatus];
 }
+
+-(void)checkUserStatus {
+    if (![[FIRAuth auth]currentUser]) {
+        LoginViewController *loginController = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+        [self presentViewController:loginController animated:YES completion:nil];
+    }
+}
+
 
 
 @end
