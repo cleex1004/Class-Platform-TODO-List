@@ -16,6 +16,7 @@
 		BCBB89141EC0DE6F009C7A3E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCBB89121EC0DE6F009C7A3E /* LaunchScreen.storyboard */; };
 		BCBB891C1EC0DFFE009C7A3E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BCBB891B1EC0DFFE009C7A3E /* GoogleService-Info.plist */; };
 		BCF1B3D81EC0EBC900A1A4BF /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF1B3D71EC0EBC900A1A4BF /* LoginViewController.m */; };
+		BCF1B3DF1EC10E5D00A1A4BF /* NewTodoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF1B3DE1EC10E5D00A1A4BF /* NewTodoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,8 @@
 		BCBB891B1EC0DFFE009C7A3E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BCF1B3D61EC0EBC900A1A4BF /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		BCF1B3D71EC0EBC900A1A4BF /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		BCF1B3DD1EC10E5D00A1A4BF /* NewTodoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewTodoViewController.h; sourceTree = "<group>"; };
+		BCF1B3DE1EC10E5D00A1A4BF /* NewTodoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewTodoViewController.m; sourceTree = "<group>"; };
 		BEA060FC4302252C998D2707 /* Pods-Cross-Platform-TODO-List.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cross-Platform-TODO-List.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cross-Platform-TODO-List/Pods-Cross-Platform-TODO-List.debug.xcconfig"; sourceTree = "<group>"; };
 		D33390160ADE5A1B974365F3 /* libPods-Cross-Platform-TODO-List.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Cross-Platform-TODO-List.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -108,6 +111,8 @@
 		BCF1B3D91EC0F08600A1A4BF /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				BCF1B3DD1EC10E5D00A1A4BF /* NewTodoViewController.h */,
+				BCF1B3DE1EC10E5D00A1A4BF /* NewTodoViewController.m */,
 				BCBB890A1EC0DE6F009C7A3E /* ViewController.h */,
 				BCBB890B1EC0DE6F009C7A3E /* ViewController.m */,
 				BCF1B3D61EC0EBC900A1A4BF /* LoginViewController.h */,
@@ -270,6 +275,7 @@
 				BCF1B3D81EC0EBC900A1A4BF /* LoginViewController.m in Sources */,
 				BCBB890C1EC0DE6F009C7A3E /* ViewController.m in Sources */,
 				BCBB89091EC0DE6F009C7A3E /* AppDelegate.m in Sources */,
+				BCF1B3DF1EC10E5D00A1A4BF /* NewTodoViewController.m in Sources */,
 				BCBB89061EC0DE6F009C7A3E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

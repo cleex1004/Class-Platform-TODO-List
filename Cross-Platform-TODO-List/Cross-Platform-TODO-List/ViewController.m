@@ -41,6 +41,12 @@
     }
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    [super prepareForSegue:segue sender:sender];
+    
+    NSLog(@"%@", segue.destinationViewController);
+}
+
 -(void)setupFirebase {
     FIRDatabaseReference *databaseReference = [[FIRDatabase database] reference];
     self.currentUser = [[FIRAuth auth] currentUser];
