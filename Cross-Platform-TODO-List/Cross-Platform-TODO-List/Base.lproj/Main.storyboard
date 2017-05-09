@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l4R-RI-jOT">
+                            <containerView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l4R-RI-jOT">
                                 <rect key="frame" x="0.0" y="64" width="375" height="0.0"/>
                                 <constraints>
                                     <constraint firstAttribute="height" id="bar-sK-xtV"/>
@@ -181,6 +181,10 @@
         <scene sceneID="Ba0-g5-Yur">
             <objects>
                 <viewController id="aGw-mA-qig" customClass="NewTodoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KPg-zu-BiF"/>
+                        <viewControllerLayoutGuide type="bottom" id="1Cb-2j-1Ll"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Hp0-gD-8Az">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -204,7 +208,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0jv-lH-E0A">
-                                <rect key="frame" x="277" y="-40" width="78" height="30"/>
+                                <rect key="frame" x="277" y="121" width="78" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="ADD TODO">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -221,9 +225,9 @@
                             <constraint firstItem="Flu-q9-4LP" firstAttribute="top" secondItem="iz2-UE-sy0" secondAttribute="bottom" constant="10" id="UUw-Gg-Sq8"/>
                             <constraint firstItem="iz2-UE-sy0" firstAttribute="centerX" secondItem="Hp0-gD-8Az" secondAttribute="centerX" id="Xzk-2p-xWh"/>
                             <constraint firstAttribute="trailing" secondItem="Flu-q9-4LP" secondAttribute="trailing" constant="20" id="e7K-0S-er3"/>
-                            <constraint firstAttribute="bottom" secondItem="0jv-lH-E0A" secondAttribute="bottom" constant="10" id="elP-9U-Zhz"/>
                             <constraint firstAttribute="trailing" secondItem="2oE-b5-CHc" secondAttribute="trailing" constant="20" id="fcy-3H-qRO"/>
                             <constraint firstItem="2oE-b5-CHc" firstAttribute="top" secondItem="Flu-q9-4LP" secondAttribute="bottom" constant="10" id="h0Y-Nf-EoR"/>
+                            <constraint firstItem="0jv-lH-E0A" firstAttribute="top" secondItem="2oE-b5-CHc" secondAttribute="bottom" constant="10" id="j03-Mg-heQ"/>
                             <constraint firstAttribute="trailing" secondItem="0jv-lH-E0A" secondAttribute="trailing" constant="20" id="wVZ-CB-9s2"/>
                             <constraint firstItem="Flu-q9-4LP" firstAttribute="leading" secondItem="Hp0-gD-8Az" secondAttribute="leading" constant="20" id="yz4-zy-0hL"/>
                         </constraints>
