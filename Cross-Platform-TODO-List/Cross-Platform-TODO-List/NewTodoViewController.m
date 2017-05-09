@@ -35,5 +35,21 @@
     [[newTodoReference child:@"content"] setValue:self.contentTextField.text];
 }
 
+//- (IBAction)plusButtonPressed:(id)sender {
+//    if (self.containerView.hidden == YES) {
+//        self.containerView.hidden = NO;
+//        self.heightConstraint.constant = 160;
+//        [UIView animateWithDuration:0.6 animations:^{
+//            [self.view layoutIfNeeded];
+//        }];
+//    } else {
+//        self.containerView.hidden = YES;
+//        self.heightConstraint.constant = 0;
+//        [UIView animateWithDuration:0.6 animations:^{
+//            [self.view layoutIfNeeded];
+//        }];
+//    }
+//}
+
 
 @end

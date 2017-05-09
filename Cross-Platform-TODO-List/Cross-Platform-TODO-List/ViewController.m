@@ -30,7 +30,6 @@
 
 -(void)viewDidLoad {
     [super viewDidLoad];
-    self.allTodos = [[NSMutableArray alloc]init];
 }
 
 -(void)viewDidAppear:(BOOL)animated {
@@ -65,10 +64,9 @@
 
 -(void)startMonitoringTodoUpdates {
     self.allTodosHandler = [[self.userReference child:@"todos"] observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
-//        NSMutableArray *allTodos = [[NSMutableArray alloc]init];
-        
+        self.allTodos = [[NSMutableArray alloc]init];
+
         for (FIRDataSnapshot *child in snapshot.children) {
-            
             NSDictionary *todoData = child.value;
             NSString *todoTitle = todoData[@"title"];
             NSString *todoContent = todoData[@"content"];
