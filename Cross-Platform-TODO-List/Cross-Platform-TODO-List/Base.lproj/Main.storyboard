@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l4R-RI-jOT">
+                            <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l4R-RI-jOT">
                                 <rect key="frame" x="0.0" y="64" width="375" height="160"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="160" id="bar-sK-xtV"/>
@@ -31,15 +31,50 @@
                                     <segue destination="aGw-mA-qig" kind="embed" id="1GT-8y-OXq"/>
                                 </connections>
                             </containerView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rRE-pk-bUq">
+                                <rect key="frame" x="0.0" y="224" width="375" height="443"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" tag="1" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="29O-Vo-CfV">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="29O-Vo-CfV" id="qQU-gy-bIq">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="l4R-RI-jOT" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="7NA-dB-jes"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rRE-pk-bUq" secondAttribute="bottom" id="EsR-Vs-LYu"/>
+                            <constraint firstItem="rRE-pk-bUq" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="OOz-zA-UYV"/>
+                            <constraint firstItem="rRE-pk-bUq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XHW-2r-Vxi"/>
+                            <constraint firstItem="rRE-pk-bUq" firstAttribute="top" secondItem="l4R-RI-jOT" secondAttribute="bottom" id="oq0-V4-sqZ"/>
                             <constraint firstAttribute="trailing" secondItem="l4R-RI-jOT" secondAttribute="trailing" id="qld-ax-wI1"/>
                             <constraint firstItem="l4R-RI-jOT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="zGf-Dt-z88"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="TODO LIST" id="XXv-xd-eDx"/>
+                    <navigationItem key="navigationItem" title="TODO LIST" id="XXv-xd-eDx">
+                        <barButtonItem key="leftBarButtonItem" title="LOGOUT" id="2kG-ra-Gdd">
+                            <color key="tintColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="logoutButtonPressed:" destination="BYZ-38-t0r" id="9rH-GZ-a8L"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="+" id="8cS-B6-K5W">
+                            <color key="tintColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="plusButtonPressed:" destination="BYZ-38-t0r" id="lMP-Be-wys"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="containerView" destination="l4R-RI-jOT" id="Tus-sF-Y6I"/>
+                        <outlet property="todoTableView" destination="rRE-pk-bUq" id="fTt-ye-Ljy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
