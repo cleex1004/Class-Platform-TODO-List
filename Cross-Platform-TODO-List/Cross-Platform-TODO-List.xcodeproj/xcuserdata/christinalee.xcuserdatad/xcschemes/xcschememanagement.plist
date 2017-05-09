@@ -9,9 +9,19 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>WatchKit-TODO-List.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>BC9E6D961EC2341F002A3F67</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>BCBB89001EC0DE6F009C7A3E</key>
 		<dict>
 			<key>primary</key>
