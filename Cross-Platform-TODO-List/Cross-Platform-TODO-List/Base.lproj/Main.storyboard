@@ -23,23 +23,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l4R-RI-jOT">
-                                <rect key="frame" x="0.0" y="64" width="375" height="160"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="0.0"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="160" id="bar-sK-xtV"/>
+                                    <constraint firstAttribute="height" id="bar-sK-xtV"/>
                                 </constraints>
                                 <connections>
                                     <segue destination="aGw-mA-qig" kind="embed" id="1GT-8y-OXq"/>
                                 </connections>
                             </containerView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rRE-pk-bUq">
-                                <rect key="frame" x="0.0" y="224" width="375" height="443"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" tag="1" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="29O-Vo-CfV">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="29O-Vo-CfV" id="qQU-gy-bIq">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -73,6 +73,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="containerView" destination="l4R-RI-jOT" id="Tus-sF-Y6I"/>
+                        <outlet property="heightConstraint" destination="bar-sK-xtV" id="oaH-hg-oK9"/>
                         <outlet property="todoTableView" destination="rRE-pk-bUq" id="fTt-ye-Ljy"/>
                     </connections>
                 </viewController>
@@ -181,7 +182,7 @@
             <objects>
                 <viewController id="aGw-mA-qig" customClass="NewTodoViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Hp0-gD-8Az">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NEW TODO:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iz2-UE-sy0">
@@ -203,7 +204,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0jv-lH-E0A">
-                                <rect key="frame" x="277" y="120" width="78" height="30"/>
+                                <rect key="frame" x="277" y="-40" width="78" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="ADD TODO">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

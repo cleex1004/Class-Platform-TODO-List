@@ -21,6 +21,8 @@
 
 @property (weak, nonatomic) IBOutlet UIView *containerView;
 @property (weak, nonatomic) IBOutlet UITableView *todoTableView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightConstraint;
+
 
 @end
 
@@ -71,7 +73,7 @@
             NSString *todoTitle = todoData[@"title"];
             NSString *todoContent = todoData[@"content"];
             
-            [self.allTodos addObject:todoTitle];
+            [self.allTodos addObject:todoData];
             [self.todoTableView reloadData];
             //for lab append new 'todo' to allTodos array
             
@@ -91,8 +93,16 @@
 - (IBAction)plusButtonPressed:(id)sender {
     if (self.containerView.hidden == YES) {
         self.containerView.hidden = NO;
+        self.heightConstraint.constant = 160;
+        [UIView animateWithDuration:0.6 animations:^{
+            [self.view layoutIfNeeded];
+        }];
     } else {
         self.containerView.hidden = YES;
+        self.heightConstraint.constant = 0;
+        [UIView animateWithDuration:0.6 animations:^{
+            [self.view layoutIfNeeded];
+        }];
     }
 }
 
@@ -102,9 +112,11 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    NSString *currentTodo = self.allTodos[indexPath.row];
+    NSDictionary *currentTodo = self.allTodos[indexPath.row];
+    NSString *todoTitle = currentTodo[@"title"];
+    NSString *todoContent = currentTodo[@"content"];
     
-    cell.textLabel.text = currentTodo;
+    cell.textLabel.text = [NSString stringWithFormat:@"Todo Title: %@ - Content: %@", todoTitle, todoContent];
     
     return cell;
 }
