@@ -23,7 +23,7 @@
 
 - (void)awakeWithContext:(id)context {
     [super awakeWithContext:context];
-
+    [self setupTable];
     // Configure interface objects here.
 }
 

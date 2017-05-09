@@ -9,13 +9,12 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="12029"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
+        <!--InterfaceController-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController">
+                <controller identifier="InterfaceController" id="AgC-eL-Hgc" customClass="InterfaceController">
                     <items>
-                        <label width="136" alignment="left" text="NUMBER OF TODOS" textAlignment="center" numberOfLines="0" id="PTN-sL-DCz"/>
-                        <group width="1" height="108" alignment="left" id="w5M-XK-aO8">
+                        <group width="1" height="150" alignment="left" id="w5M-XK-aO8">
                             <items>
                                 <table alignment="left" id="Cg6-iL-oFl">
                                     <items>

@@ -73,7 +73,6 @@
             
             [self.allTodos addObject:todoData];
             [self.todoTableView reloadData];
-            //for lab append new 'todo' to allTodos array
             
             NSLog(@"Todo Title: %@ - Content: %@", todoTitle, todoContent);
         }
