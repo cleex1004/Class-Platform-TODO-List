@@ -33,6 +33,7 @@
 		BCE59C5F1EC249CD004C8098 /* Todo.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9E6DC01EC241D0002A3F67 /* Todo.m */; };
 		BCE59C651EC369F3004C8098 /* DetailInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE59C641EC369F3004C8098 /* DetailInterfaceController.m */; };
 		BCE59C681EC36E13004C8098 /* TVDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE59C671EC36E13004C8098 /* TVDetailViewController.m */; };
+		BCE59C6F1EC3AF18004C8098 /* CompletedTodoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE59C6E1EC3AF18004C8098 /* CompletedTodoViewController.m */; };
 		BCF1B3D81EC0EBC900A1A4BF /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF1B3D71EC0EBC900A1A4BF /* LoginViewController.m */; };
 		BCF1B3DF1EC10E5D00A1A4BF /* NewTodoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF1B3DE1EC10E5D00A1A4BF /* NewTodoViewController.m */; };
 /* End PBXBuildFile section */
@@ -120,6 +121,8 @@
 		BCE59C641EC369F3004C8098 /* DetailInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailInterfaceController.m; sourceTree = "<group>"; };
 		BCE59C661EC36E13004C8098 /* TVDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TVDetailViewController.h; sourceTree = "<group>"; };
 		BCE59C671EC36E13004C8098 /* TVDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TVDetailViewController.m; sourceTree = "<group>"; };
+		BCE59C6D1EC3AF18004C8098 /* CompletedTodoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompletedTodoViewController.h; sourceTree = "<group>"; };
+		BCE59C6E1EC3AF18004C8098 /* CompletedTodoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompletedTodoViewController.m; sourceTree = "<group>"; };
 		BCF1B3D61EC0EBC900A1A4BF /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		BCF1B3D71EC0EBC900A1A4BF /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		BCF1B3DD1EC10E5D00A1A4BF /* NewTodoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewTodoViewController.h; sourceTree = "<group>"; };
@@ -271,6 +274,8 @@
 		BCF1B3D91EC0F08600A1A4BF /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				BCE59C6D1EC3AF18004C8098 /* CompletedTodoViewController.h */,
+				BCE59C6E1EC3AF18004C8098 /* CompletedTodoViewController.m */,
 				BCF1B3DD1EC10E5D00A1A4BF /* NewTodoViewController.h */,
 				BCF1B3DE1EC10E5D00A1A4BF /* NewTodoViewController.m */,
 				BCBB890A1EC0DE6F009C7A3E /* ViewController.h */,
@@ -548,6 +553,7 @@
 				BCBB890C1EC0DE6F009C7A3E /* ViewController.m in Sources */,
 				BCBB89091EC0DE6F009C7A3E /* AppDelegate.m in Sources */,
 				BCF1B3DF1EC10E5D00A1A4BF /* NewTodoViewController.m in Sources */,
+				BCE59C6F1EC3AF18004C8098 /* CompletedTodoViewController.m in Sources */,
 				BCBB89061EC0DE6F009C7A3E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
