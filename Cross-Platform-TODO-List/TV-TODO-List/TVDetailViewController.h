@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Todo.h"
 
 @interface TVDetailViewController : UIViewController
+
+@property(strong, nonatomic) Todo *currentTodo;
 
 @end

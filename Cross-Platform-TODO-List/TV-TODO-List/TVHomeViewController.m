@@ -8,6 +8,7 @@
 
 #import "TVHomeViewController.h"
 #import "Todo.h"
+#import "TVDetailViewController.h"
 
 @interface TVHomeViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -63,6 +64,10 @@
     currentTodo.title = self.allTodos[indexPath.row].title;
     currentTodo.content = self.allTodos[indexPath.row].content;
     
+    TVDetailViewController *newVC = [self.storyboard instantiateViewControllerWithIdentifier:@"TVDetailViewController"];
+    newVC.currentTodo = currentTodo;
+    
+    [self presentViewController:newVC animated:YES completion:nil];
 }
 
 

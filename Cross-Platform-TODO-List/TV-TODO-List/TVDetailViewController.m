@@ -7,8 +7,12 @@
 //
 
 #import "TVDetailViewController.h"
+#import "Todo.h"
 
 @interface TVDetailViewController ()
+
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *contentLabel;
 
 @end
 
@@ -16,6 +20,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.titleLabel.text = self.currentTodo.title;
+    self.contentLabel.text = self.currentTodo.content;
+//    [self.titleLabel setText:self.currentTodo.title];
     // Do any additional setup after loading the view.
 }
 
