@@ -37,7 +37,15 @@
         }
         
         if (completion) {
-            completion(allTodos);
+//            completion(allTodos);
+            
+//            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+//                completion(allTodos);
+//            }]; //operation queue
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completion(allTodos);
+            }); //GCD
         }
     }] resume];
 }
