@@ -12,6 +12,6 @@
 
 @property (strong, nonatomic) NSString *title;
 @property (strong, nonatomic) NSString *content;
-@property (strong, nonatomic) NSNumber *completed;
+@property (strong, nonatomic) NSString *completed;
 
 @end

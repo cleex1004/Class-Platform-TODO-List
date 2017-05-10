@@ -12,7 +12,7 @@
 @import FirebaseAuth;
 @import Firebase;
 
-@interface ViewController () <UITableViewDataSource>
+@interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property(strong, nonatomic) FIRDatabaseReference *userReference;
 @property(strong, nonatomic) FIRUser *currentUser;
@@ -37,6 +37,7 @@
     [super viewDidAppear:animated];
     [self checkUserStatus];
     self.todoTableView.dataSource = self;
+    self.todoTableView.delegate = self;
 }
 
 -(void)checkUserStatus {
@@ -122,5 +123,29 @@
     
     return cell;
 }
+
+-(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+}
+
+-(NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewRowAction *button = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"DELETE" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath)
+                                    {
+                                        NSLog(@"Action to perform with Button 1");
+                                    }];
+    button.backgroundColor = [UIColor greenColor];
+    UITableViewRowAction *button2 = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"COMPLETED" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath)
+                                     {
+                                         NSLog(@"Action to perform with Button2!");
+                                     }];
+    button2.backgroundColor = [UIColor redColor];
+    
+    return @[button, button2]; //array with all the buttons you want. 1,2,3, etc...
+}
+
+
 
 @end

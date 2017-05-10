@@ -75,7 +75,10 @@
             todo.content = todoData[@"content"];
             todo.completed = todoData[@"completed"];
             
-            [self.completedTodos addObject:todo];
+            if ([todo.completed isEqual: @"1"]) {
+                [self.completedTodos addObject:todo];
+            }
+
             [self.completedTable reloadData];
             
             NSLog(@"Todo Title: %@ - Content: %@ - Completed: %@", todo.title, todo.content, todo.completed);
