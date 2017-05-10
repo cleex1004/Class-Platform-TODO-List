@@ -24,11 +24,11 @@
     [super viewDidLoad];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
-    [FirebaseAPI fetchAllTodos:^(NSArray<Todo *> *allTodos) {
-        NSLog(@"%@", allTodos);
-        self.allTodos = allTodos;
-        [self.tableView reloadData];
-    }];
+//    [FirebaseAPI fetchAllTodos:^(NSArray<Todo *> *allTodos) {
+//        NSLog(@"%@", allTodos);
+//        self.allTodos = allTodos;
+//        [self.tableView reloadData];
+//    }];
 }
 
 - (void)didReceiveMemoryWarning {

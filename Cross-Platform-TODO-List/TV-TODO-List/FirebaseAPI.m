@@ -11,7 +11,7 @@
 
 @implementation FirebaseAPI
 
-+(void)fetchAllTodos:(AllTodosCompletion)completion {
++(void)fetchAllTodos:(NSString *)email:(AllTodosCompletion)completion {
     NSString *urlString = [NSString stringWithFormat:@"https://cross-platform-todo-list.firebaseio.com/users.json?auth=%@", APP_KEY];
     
     NSURL *databaseURL = [NSURL URLWithString:urlString];
