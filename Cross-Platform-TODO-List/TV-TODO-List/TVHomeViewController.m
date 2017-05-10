@@ -9,7 +9,7 @@
 #import "TVHomeViewController.h"
 #import "Todo.h"
 
-@interface TVHomeViewController ()<UITableViewDataSource>
+@interface TVHomeViewController ()<UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSArray<Todo *> *allTodos;
@@ -21,6 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tableView.dataSource = self;
+    self.tableView.delegate = self;
     // Do any additional setup after loading the view.
 }
 
@@ -57,6 +58,12 @@
     return cell;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    Todo *currentTodo = [[Todo alloc]init];
+    currentTodo.title = self.allTodos[indexPath.row].title;
+    currentTodo.content = self.allTodos[indexPath.row].content;
+    
+}
 
 
 @end

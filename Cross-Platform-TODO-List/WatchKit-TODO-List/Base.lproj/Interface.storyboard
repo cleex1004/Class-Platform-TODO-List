@@ -44,5 +44,25 @@
             </objects>
             <point key="canvasLocation" x="153" y="131"/>
         </scene>
+        <!--DetailInterfaceController-->
+        <scene sceneID="VIZ-YO-Agb">
+            <objects>
+                <controller identifier="DetailInterfaceController" id="Jyh-1A-9OJ" customClass="DetailInterfaceController">
+                    <items>
+                        <group width="1" height="150" alignment="left" layout="vertical" id="DTg-Vp-lQR">
+                            <items>
+                                <label width="136" alignment="left" text="Label" id="v20-mZ-aok"/>
+                                <label width="136" alignment="left" text="Label" id="8CT-sS-QQO"/>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="contentLabel" destination="8CT-sS-QQO" id="S5J-US-7Xw"/>
+                        <outlet property="titleLabel" destination="v20-mZ-aok" id="U84-c0-Vxb"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="400" y="127"/>
+        </scene>
     </scenes>
 </document>
