@@ -75,6 +75,7 @@
             todo.title = todoData[@"title"];
             todo.content = todoData[@"content"];
             todo.completed = todoData[@"completed"];
+            todo.key = todoData[@"key"];
             
             [self.allTodos addObject:todo];
             [self.todoTableView reloadData];
@@ -136,14 +137,14 @@
                                     {
                                         NSLog(@"Action to perform with Button 1");
                                     }];
-    button.backgroundColor = [UIColor greenColor];
+    button.backgroundColor = [UIColor redColor];
     UITableViewRowAction *button2 = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"COMPLETED" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath)
                                      {
                                          NSLog(@"Action to perform with Button2!");
                                      }];
-    button2.backgroundColor = [UIColor redColor];
+    button2.backgroundColor = [UIColor greenColor];
     
-    return @[button, button2]; //array with all the buttons you want. 1,2,3, etc...
+    return @[button, button2];
 }
 
 

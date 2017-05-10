@@ -13,5 +13,8 @@
 @property (strong, nonatomic) NSString *title;
 @property (strong, nonatomic) NSString *content;
 @property (strong, nonatomic) NSString *completed;
+@property (strong, nonatomic) NSString *email;
+@property (strong, nonatomic) NSString *key;
+
 
 @end
