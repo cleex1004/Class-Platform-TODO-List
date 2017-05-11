@@ -131,6 +131,20 @@
                                     <action selector="signupPressed:" destination="HYj-AV-F98" eventType="touchUpInside" id="kIM-qm-MDy"/>
                                 </connections>
                             </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="2ow-a0-G5W">
+                                <rect key="frame" x="0.5" y="276" width="375" height="150"/>
+                                <color key="backgroundColor" red="0.26134855239999999" green="1" blue="0.23422683690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="G6O-2u-JpD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="errorPressed:" destination="HYj-AV-F98" eventType="touchUpInside" id="hoY-aW-5MF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -142,22 +156,31 @@
                             <constraint firstItem="w0f-ah-Ewc" firstAttribute="width" secondItem="gGr-uf-OfG" secondAttribute="width" multiplier="0.5" id="LG1-Jk-O4N"/>
                             <constraint firstItem="r88-iS-3Dg" firstAttribute="top" secondItem="gGr-uf-OfG" secondAttribute="bottom" constant="30" id="Mab-4E-729"/>
                             <constraint firstItem="gGr-uf-OfG" firstAttribute="top" secondItem="XD4-lt-K3x" secondAttribute="bottom" constant="20" id="X5Z-xe-Pyj"/>
+                            <constraint firstItem="2ow-a0-G5W" firstAttribute="top" secondItem="r88-iS-3Dg" secondAttribute="bottom" constant="20" id="XBT-Ks-dNy"/>
                             <constraint firstItem="w0f-ah-Ewc" firstAttribute="top" secondItem="gGr-uf-OfG" secondAttribute="bottom" constant="30" id="Y90-Jj-xdk"/>
                             <constraint firstItem="w0f-ah-Ewc" firstAttribute="leading" secondItem="gGr-uf-OfG" secondAttribute="leading" id="dHK-Zs-PjB"/>
+                            <constraint firstItem="2ow-a0-G5W" firstAttribute="width" secondItem="2OZ-Ql-oh6" secondAttribute="width" id="euv-37-Vw5"/>
                             <constraint firstItem="XD4-lt-K3x" firstAttribute="centerX" secondItem="2OZ-Ql-oh6" secondAttribute="centerX" id="hix-6a-CpY"/>
                             <constraint firstItem="JCD-P1-ee1" firstAttribute="top" secondItem="W4a-yZ-tfu" secondAttribute="bottom" constant="10" id="opT-hr-LfN"/>
                             <constraint firstItem="gGr-uf-OfG" firstAttribute="centerX" secondItem="2OZ-Ql-oh6" secondAttribute="centerX" id="rAU-sS-fMa"/>
+                            <constraint firstItem="2ow-a0-G5W" firstAttribute="centerX" secondItem="2OZ-Ql-oh6" secondAttribute="centerX" id="sWY-Rk-6RJ"/>
                             <constraint firstItem="XD4-lt-K3x" firstAttribute="top" secondItem="JCD-P1-ee1" secondAttribute="bottom" constant="50" id="tXJ-1v-ucs"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="XD4-lt-K3x" id="fhX-9x-vPi"/>
+                        <outlet property="errorButton" destination="2ow-a0-G5W" id="z0t-UL-d3x"/>
                         <outlet property="passwordTextField" destination="gGr-uf-OfG" id="1Nf-7V-VJN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hqs-oC-RiT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="5sZ-Ig-VMn">
+                    <connections>
+                        <action selector="errorTap:" destination="HYj-AV-F98" id="UhJ-et-WcB"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2735" y="47"/>
+            <point key="canvasLocation" x="2733.5999999999999" y="46.326836581709152"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="BTb-D9-ELV">

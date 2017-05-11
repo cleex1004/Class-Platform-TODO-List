@@ -15,6 +15,9 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 
+@property (weak, nonatomic) IBOutlet UIButton *errorButton;
+
+
 @end
 
 @implementation LoginViewController
@@ -29,6 +32,9 @@
         
         if (error) {
             NSLog(@"Error Signing In: %@", error.localizedDescription);
+            [self.errorButton setTitle:@"There was an error logging in. Tap to dismiss and try again." forState:UIControlStateNormal]
+            ;
+            self.errorButton.hidden = NO;
         }
         
         if (user) {
@@ -42,12 +48,23 @@
     [[FIRAuth auth] createUserWithEmail:self.emailTextField.text password:self.passwordTextField.text completion:^(FIRUser * _Nullable user, NSError * _Nullable error) {
         if (error) {
             NSLog(@"Error Signing Up: %@", error.localizedDescription);
+            [self.errorButton setTitle:@"There was an error signing up. Tap to dismiss and try again." forState:UIControlStateNormal]
+            ;
+            self.errorButton.hidden = NO;
         }
         
         if (user) {
             NSLog(@"Successfully Signed Up User: %@", user);
         }
     }];
+}
+
+- (IBAction)errorPressed:(id)sender {
+    self.emailTextField.text = nil;
+    self.passwordTextField.text = nil;
+    
+    [self.errorButton setHidden:YES];
+    
 }
 
 
