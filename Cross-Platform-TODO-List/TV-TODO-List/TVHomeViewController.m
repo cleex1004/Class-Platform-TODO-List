@@ -27,45 +27,28 @@
     [super viewDidLoad];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
-    self.filteredTodos = [[NSMutableArray<Todo *> alloc]init];
-    __block NSMutableArray<Todo *> *test = [[NSMutableArray<Todo *> alloc]init];
-    [FirebaseAPI fetchAllTodos:^(NSArray<Todo *> *allTodos) {
-        NSLog(@"%@", allTodos);
-        NSLog(@"%@", self.email);
-        self.allTodos = allTodos;
-        for (Todo *todo in self.allTodos) {
-            if (todo.email == self.email) {
-                NSLog(@"%@", todo.email);
-                [test addObject:todo];
-            }
-        }
-        [self setFilteredTodos:test];
-        
-        [self.tableView reloadData];
-    }];
-
-//    [self.tableView reloadData];
 }
-
-//-(void)viewDidAppear:(BOOL)animated {
-//    [super viewDidAppear:YES];
-//    
-//    [self checkEmail];
-//}
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
     [self checkEmail];
-}
+    [FirebaseAPI fetchAllTodos:^(NSArray<Todo *> *allTodos) {
+        self.filteredTodos = [[NSMutableArray<Todo *> alloc]init];
+        NSLog(@"%@", allTodos);
+        NSLog(@"%@", self.email);
+        self.allTodos = allTodos;
+        for (Todo *todo in self.allTodos) {
+            if ([todo.email isEqualToString:self.email]) {
+                NSLog(@"%@", todo.email);
+                [self.filteredTodos addObject:todo];
+            }
+        }
+        
+        [self.tableView reloadData];
+    }];
+    
 
-//-(void)filterByEmail {
-//    for (Todo *todo in self.allTodos) {
-//        if (todo.email == self.email) {
-//            NSLog(@"%@", todo.email);
-//            [self.filteredTodos addObject:todo];
-//        }
-//    }
-//}
+}
 
 -(void)checkEmail {
     if (!self.email) {
@@ -122,3 +105,23 @@
 //
 //    return @[firstTodo, secondTodo, thirdTodo];
 //}
+
+//    self.filteredTodos = [[NSMutableArray<Todo *> alloc]init];
+//    __block NSMutableArray<Todo *> *test = [[NSMutableArray<Todo *> alloc]init];
+//    [FirebaseAPI fetchAllTodos:^(NSArray<Todo *> *allTodos) {
+//        NSLog(@"%@", allTodos);
+//        NSLog(@"%@", self.email);
+//        self.allTodos = allTodos;
+//        for (Todo *todo in self.allTodos) {
+//            if (todo.email == self.email) {
+//                NSLog(@"%@", todo.email);
+//                [test addObject:todo];
+//            }
+//        }
+//        [self setFilteredTodos:test];
+//
+//        [self.tableView reloadData];
+//    }];
+//
+//    [self.tableView reloadData];
+
