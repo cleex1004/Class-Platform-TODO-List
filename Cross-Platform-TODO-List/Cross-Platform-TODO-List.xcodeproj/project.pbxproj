@@ -34,6 +34,10 @@
 		BCE59C651EC369F3004C8098 /* DetailInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE59C641EC369F3004C8098 /* DetailInterfaceController.m */; };
 		BCE59C681EC36E13004C8098 /* TVDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE59C671EC36E13004C8098 /* TVDetailViewController.m */; };
 
+		BCE59C6C1EC38435004C8098 /* FirebaseAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE59C6B1EC38435004C8098 /* FirebaseAPI.m */; };
+
+		BCE59C6F1EC3AF18004C8098 /* CompletedTodoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE59C6E1EC3AF18004C8098 /* CompletedTodoViewController.m */; };
+
 		BCE59C6F1EC3AF18004C8098 /* CompletedTodoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE59C6E1EC3AF18004C8098 /* CompletedTodoViewController.m */; };
 
 		BCE59C6C1EC38435004C8098 /* FirebaseAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE59C6B1EC38435004C8098 /* FirebaseAPI.m */; };
@@ -126,12 +130,21 @@
 		BCE59C661EC36E13004C8098 /* TVDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TVDetailViewController.h; sourceTree = "<group>"; };
 		BCE59C671EC36E13004C8098 /* TVDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TVDetailViewController.m; sourceTree = "<group>"; };
 
+		BCE59C691EC382E7004C8098 /* Credentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Credentials.h; sourceTree = "<group>"; };
+		BCE59C6A1EC38435004C8098 /* FirebaseAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirebaseAPI.h; sourceTree = "<group>"; };
+		BCE59C6B1EC38435004C8098 /* FirebaseAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirebaseAPI.m; sourceTree = "<group>"; };
+
+		BCE59C6D1EC3AF18004C8098 /* CompletedTodoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompletedTodoViewController.h; sourceTree = "<group>"; };
+		BCE59C6E1EC3AF18004C8098 /* CompletedTodoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompletedTodoViewController.m; sourceTree = "<group>"; };
+
+
 		BCE59C6D1EC3AF18004C8098 /* CompletedTodoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompletedTodoViewController.h; sourceTree = "<group>"; };
 		BCE59C6E1EC3AF18004C8098 /* CompletedTodoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompletedTodoViewController.m; sourceTree = "<group>"; };
 
 		BCE59C691EC382E7004C8098 /* Credentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Credentials.h; sourceTree = "<group>"; };
 		BCE59C6A1EC38435004C8098 /* FirebaseAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirebaseAPI.h; sourceTree = "<group>"; };
 		BCE59C6B1EC38435004C8098 /* FirebaseAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirebaseAPI.m; sourceTree = "<group>"; };
+
 
 		BCF1B3D61EC0EBC900A1A4BF /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		BCF1B3D71EC0EBC900A1A4BF /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
