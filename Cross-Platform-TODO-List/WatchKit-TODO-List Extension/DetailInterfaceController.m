@@ -20,7 +20,7 @@
 
 - (void)awakeWithContext:(id)context {
     [super awakeWithContext:context];
-    
+    self.currentTodo = context;
     [self.titleLabel setText:self.currentTodo.title];
     [self.contentLabel setText:self.currentTodo.content];
 }

@@ -8,14 +8,15 @@
 
 #import "ViewController.h"
 #import "LoginViewController.h"
+#import "Todo.h"
 @import FirebaseAuth;
 @import Firebase;
 
-@interface ViewController () <UITableViewDataSource>
+@interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property(strong, nonatomic) FIRDatabaseReference *userReference;
 @property(strong, nonatomic) FIRUser *currentUser;
-@property(strong, nonatomic) NSMutableArray *allTodos;
+@property(strong, nonatomic) NSMutableArray<Todo *> *allTodos;
 
 @property(nonatomic) FIRDatabaseHandle allTodosHandler;
 
@@ -36,6 +37,9 @@
     [super viewDidAppear:animated];
     [self checkUserStatus];
     self.todoTableView.dataSource = self;
+    self.todoTableView.delegate = self;
+    self.todoTableView.estimatedRowHeight = 50;
+    self.todoTableView.rowHeight = UITableViewAutomaticDimension;
 }
 
 -(void)checkUserStatus {
@@ -64,17 +68,22 @@
 
 -(void)startMonitoringTodoUpdates {
     self.allTodosHandler = [[self.userReference child:@"todos"] observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
-        self.allTodos = [[NSMutableArray alloc]init];
+        self.allTodos = [[NSMutableArray<Todo *> alloc]init];
 
         for (FIRDataSnapshot *child in snapshot.children) {
             NSDictionary *todoData = child.value;
-            NSString *todoTitle = todoData[@"title"];
-            NSString *todoContent = todoData[@"content"];
             
-            [self.allTodos addObject:todoData];
+            Todo *todo = [[Todo alloc] init];
+            todo.title = todoData[@"title"];
+            todo.content = todoData[@"content"];
+            todo.completed = todoData[@"completed"];
+            todo.key = todoData[@"key"];
+            todo.email = todoData[@"email"];
+            
+            [self.allTodos addObject:todo];
             [self.todoTableView reloadData];
             
-            NSLog(@"Todo Title: %@ - Content: %@", todoTitle, todoContent);
+            NSLog(@"Todo Title: %@ - Content: %@ - Completed: %@", todo.title, todo.content, todo.completed);
         }
     }];
 }
@@ -86,6 +95,8 @@
         NSLog(@"Error signing out: %@", signOutError);
         return;
     }
+    LoginViewController *loginController = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+    [self presentViewController:loginController animated:YES completion:nil];
 }
 
 - (IBAction)plusButtonPressed:(id)sender {
@@ -110,13 +121,52 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    NSDictionary *currentTodo = self.allTodos[indexPath.row];
-    NSString *todoTitle = currentTodo[@"title"];
-    NSString *todoContent = currentTodo[@"content"];
+    Todo *currentTodo = self.allTodos[indexPath.row];
     
-    cell.textLabel.text = [NSString stringWithFormat:@"Todo Title: %@ - Content: %@", todoTitle, todoContent];
-    
+    cell.textLabel.text = [NSString stringWithFormat:@"Todo Title: %@ - Content: %@ - Completed: %@", currentTodo.title, currentTodo.content, currentTodo.completed];
+    cell.textLabel.numberOfLines = 0;
     return cell;
 }
+
+-(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+}
+
+-(NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UITableViewRowAction *deleteAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"DELETE" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
+        NSLog(@"work on deleting!");
+    }];
+    
+    deleteAction.backgroundColor = [UIColor redColor];
+    
+    UITableViewRowAction *completeAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"COMPLETED" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
+        FIRDatabaseReference *userReference = [[FIRDatabase database] reference];
+        
+        Todo *current = self.allTodos[indexPath.row];
+        
+        [[[[[[userReference child:@"users"] child:self.currentUser.uid] child:@"todos"] child:current.key]child:@"completed"] setValue:@"YES"];
+    }];
+    
+    completeAction.backgroundColor = [UIColor greenColor];
+    
+    return @[deleteAction, completeAction];
+}
+
+//-(NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    
+//    UITableViewRowAction *doneAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"DONE" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
+//        
+//        //Put functionality for doneButton here!
+//        
+//    }];
+//    
+//    doneAction.backgroundColor = [UIColor colorWithRed:0.0 green:0.5 blue:0.0 alpha:1.0];
+//    
+//    return @[doneAction];
+//}
 
 @end
