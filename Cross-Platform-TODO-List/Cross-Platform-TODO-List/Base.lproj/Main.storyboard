@@ -39,7 +39,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="29O-Vo-CfV" id="qQU-gy-bIq">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -72,7 +72,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="containerView" destination="l4R-RI-jOT" id="Tus-sF-Y6I"/>
                         <outlet property="heightConstraint" destination="bar-sK-xtV" id="oaH-hg-oK9"/>
                         <outlet property="todoTableView" destination="rRE-pk-bUq" id="fTt-ye-Ljy"/>
                     </connections>
@@ -281,7 +280,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" tableViewCell="LDy-Ag-s6l" id="ftJ-gW-J1u">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -308,7 +307,6 @@
         <!--COMPLETED-->
         <scene sceneID="pdg-0W-nxN">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iwC-lw-uB6" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LDx-na-VzN" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="COMPLETED" id="lmh-TE-I0W"/>
                     <toolbarItems/>
@@ -321,6 +319,7 @@
                         <segue destination="nY6-CK-omb" kind="relationship" relationship="rootViewController" id="xse-EV-YlC"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iwC-lw-uB6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1033" y="420"/>
         </scene>

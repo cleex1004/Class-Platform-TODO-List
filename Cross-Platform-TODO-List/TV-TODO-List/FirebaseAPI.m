@@ -11,7 +11,7 @@
 
 @implementation FirebaseAPI
 
-+(void)fetchAllTodos:(NSString *)email:(AllTodosCompletion)completion {
++(void)fetchAllTodos:(AllTodosCompletion)completion {
     NSString *urlString = [NSString stringWithFormat:@"https://cross-platform-todo-list.firebaseio.com/users.json?auth=%@", APP_KEY];
     
     NSURL *databaseURL = [NSURL URLWithString:urlString];
@@ -31,6 +31,9 @@
                 Todo *newTodo = [[Todo alloc]init];
                 newTodo.title = todoDictionary[@"title"];
                 newTodo.content = todoDictionary[@"content"];
+                newTodo.email = todoDictionary[@"email"];
+                newTodo.key = todoDictionary[@"key"];
+                newTodo.completed = todoDictionary[@"completed"];
                 
                 [allTodos addObject:newTodo];
             }

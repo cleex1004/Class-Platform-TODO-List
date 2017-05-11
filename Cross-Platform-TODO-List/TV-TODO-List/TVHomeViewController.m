@@ -10,11 +10,13 @@
 #import "Todo.h"
 #import "TVDetailViewController.h"
 #import "FirebaseAPI.h"
+#import "EmailViewController.h"
 
 @interface TVHomeViewController ()<UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSArray<Todo *> *allTodos;
+
 
 @end
 
@@ -24,11 +26,24 @@
     [super viewDidLoad];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
-//    [FirebaseAPI fetchAllTodos:^(NSArray<Todo *> *allTodos) {
-//        NSLog(@"%@", allTodos);
-//        self.allTodos = allTodos;
-//        [self.tableView reloadData];
-//    }];
+    [FirebaseAPI fetchAllTodos:^(NSArray<Todo *> *allTodos) {
+        NSLog(@"%@", allTodos);
+        self.allTodos = allTodos;
+        [self.tableView reloadData];
+    }];
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:YES];
+    
+    [self checkEmail];
+}
+
+-(void)checkEmail {
+    if (!self.email) {
+        EmailViewController *emailVC = [self.storyboard instantiateViewControllerWithIdentifier:@"EmailViewController"];
+        [self presentViewController:emailVC animated:YES completion:nil];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -51,6 +66,9 @@
     Todo *currentTodo = [[Todo alloc]init];
     currentTodo.title = self.allTodos[indexPath.row].title;
     currentTodo.content = self.allTodos[indexPath.row].content;
+    currentTodo.email = self.allTodos[indexPath.row].email;
+    currentTodo.completed = self.allTodos[indexPath.row].completed;
+    currentTodo.key = self.allTodos[indexPath.row].key;
     
     TVDetailViewController *newVC = [self.storyboard instantiateViewControllerWithIdentifier:@"TVDetailViewController"];
     newVC.currentTodo = currentTodo;
