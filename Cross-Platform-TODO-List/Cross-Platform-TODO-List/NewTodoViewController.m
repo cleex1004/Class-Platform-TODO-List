@@ -36,6 +36,9 @@
     [[newTodoReference child:@"key"] setValue:newTodoReference.key];
     [[newTodoReference child:@"completed"] setValue:@"NO"];
     [[newTodoReference child:@"email"] setValue:@"person@gmail.com"];
+    
+    self.titleTextField.text = nil;
+    self.contentTextField.text = nil;
 }
 
 

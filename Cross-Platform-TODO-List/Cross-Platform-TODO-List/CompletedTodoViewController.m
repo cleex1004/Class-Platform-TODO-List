@@ -37,6 +37,8 @@
     [super viewDidAppear:animated];
     [self checkUserStatus];
     self.completedTable.dataSource = self;
+    self.completedTable.estimatedRowHeight = 50;
+    self.completedTable.rowHeight = UITableViewAutomaticDimension;
 }
 
 -(void)checkUserStatus {
@@ -75,7 +77,7 @@
             todo.content = todoData[@"content"];
             todo.completed = todoData[@"completed"];
             
-            if ([todo.completed isEqual: @"1"]) {
+            if ([todo.completed isEqual: @"YES"]) {
                 [self.completedTodos addObject:todo];
             }
 
@@ -93,10 +95,12 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     
-    Todo *current = self.completedTodos[indexPath.row];
-    NSString *todoTitle = current.title;
-    NSString *todoContent = current.content;
-    cell.textLabel.text = [NSString stringWithFormat:@"Todo Title: %@ - Content: %@", todoTitle, todoContent];
+    Todo *todo = self.completedTodos[indexPath.row];
+
+    cell.textLabel.text = [NSString stringWithFormat:@"Todo Title: %@ - Content: %@ - Completed: %@", todo.title, todo.content, todo.completed];
+    
+    cell.textLabel.numberOfLines = 0;
+    
     return cell;
 }
 @end

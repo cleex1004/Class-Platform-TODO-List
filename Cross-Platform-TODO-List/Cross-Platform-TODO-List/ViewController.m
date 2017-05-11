@@ -38,6 +38,8 @@
     [self checkUserStatus];
     self.todoTableView.dataSource = self;
     self.todoTableView.delegate = self;
+    self.todoTableView.estimatedRowHeight = 50;
+    self.todoTableView.rowHeight = UITableViewAutomaticDimension;
 }
 
 -(void)checkUserStatus {
@@ -76,6 +78,7 @@
             todo.content = todoData[@"content"];
             todo.completed = todoData[@"completed"];
             todo.key = todoData[@"key"];
+            todo.email = todoData[@"email"];
             
             [self.allTodos addObject:todo];
             [self.todoTableView reloadData];
@@ -121,7 +124,7 @@
     Todo *currentTodo = self.allTodos[indexPath.row];
     
     cell.textLabel.text = [NSString stringWithFormat:@"Todo Title: %@ - Content: %@ - Completed: %@", currentTodo.title, currentTodo.content, currentTodo.completed];
-    
+    cell.textLabel.numberOfLines = 0;
     return cell;
 }
 
@@ -133,20 +136,37 @@
 }
 
 -(NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewRowAction *button = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"DELETE" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath)
-                                    {
-                                        NSLog(@"Action to perform with Button 1");
-                                    }];
-    button.backgroundColor = [UIColor redColor];
-    UITableViewRowAction *button2 = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"COMPLETED" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath)
-                                     {
-                                         NSLog(@"Action to perform with Button2!");
-                                     }];
-    button2.backgroundColor = [UIColor greenColor];
     
-    return @[button, button2];
+    UITableViewRowAction *deleteAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"DELETE" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
+        NSLog(@"work on deleting!");
+    }];
+    
+    deleteAction.backgroundColor = [UIColor redColor];
+    
+    UITableViewRowAction *completeAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"COMPLETED" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
+        FIRDatabaseReference *userReference = [[FIRDatabase database] reference];
+        
+        Todo *current = self.allTodos[indexPath.row];
+        
+        [[[[[[userReference child:@"users"] child:self.currentUser.uid] child:@"todos"] child:current.key]child:@"completed"] setValue:@"YES"];
+    }];
+    
+    completeAction.backgroundColor = [UIColor greenColor];
+    
+    return @[deleteAction, completeAction];
 }
 
-
+//-(NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    
+//    UITableViewRowAction *doneAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"DONE" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
+//        
+//        //Put functionality for doneButton here!
+//        
+//    }];
+//    
+//    doneAction.backgroundColor = [UIColor colorWithRed:0.0 green:0.5 blue:0.0 alpha:1.0];
+//    
+//    return @[doneAction];
+//}
 
 @end
