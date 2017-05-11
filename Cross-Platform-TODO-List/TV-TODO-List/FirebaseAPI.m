@@ -50,7 +50,7 @@
                 completion(allTodos);
             }); //GCD
         }
-    }] resume];
+    }]; // resume];
 }
 
 @end
