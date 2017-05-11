@@ -9,6 +9,7 @@
 #import "TVHomeViewController.h"
 #import "Todo.h"
 #import "TVDetailViewController.h"
+#import "FirebaseAPI.h"
 
 @interface TVHomeViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -23,28 +24,15 @@
     [super viewDidLoad];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
-    // Do any additional setup after loading the view.
+//    [FirebaseAPI fetchAllTodos:^(NSArray<Todo *> *allTodos) {
+//        NSLog(@"%@", allTodos);
+//        self.allTodos = allTodos;
+//        [self.tableView reloadData];
+//    }];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
--(NSArray<Todo *> *)allTodos{
-    Todo *firstTodo = [[Todo alloc]init];
-    firstTodo.title = @"First Todo";
-    firstTodo.content = @"This is a todo.";
-    
-    Todo *secondTodo = [[Todo alloc]init];
-    secondTodo.title = @"Second Todo";
-    secondTodo.content = @"This is a todo.";
-    
-    Todo *thirdTodo = [[Todo alloc]init];
-    thirdTodo.title = @"Third Todo";
-    thirdTodo.content = @"This is a todo.";
-    
-    return @[firstTodo, secondTodo, thirdTodo];
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -72,3 +60,19 @@
 
 
 @end
+
+//-(NSArray<Todo *> *)allTodos{
+//    Todo *firstTodo = [[Todo alloc]init];
+//    firstTodo.title = @"First Todo";
+//    firstTodo.content = @"This is a todo.";
+//
+//    Todo *secondTodo = [[Todo alloc]init];
+//    secondTodo.title = @"Second Todo";
+//    secondTodo.content = @"This is a todo.";
+//
+//    Todo *thirdTodo = [[Todo alloc]init];
+//    thirdTodo.title = @"Third Todo";
+//    thirdTodo.content = @"This is a todo.";
+//
+//    return @[firstTodo, secondTodo, thirdTodo];
+//}
