@@ -27,27 +27,28 @@
     [super viewDidLoad];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    self.filteredTodos = [[NSMutableArray<Todo *> alloc]init];
+
 }
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
     [self checkEmail];
+    __block NSMutableArray<Todo *> *test = [[NSMutableArray<Todo *> alloc]init];
     [FirebaseAPI fetchAllTodos:^(NSArray<Todo *> *allTodos) {
-        self.filteredTodos = [[NSMutableArray<Todo *> alloc]init];
         NSLog(@"%@", allTodos);
         NSLog(@"%@", self.email);
         self.allTodos = allTodos;
         for (Todo *todo in self.allTodos) {
             if ([todo.email isEqualToString:self.email]) {
                 NSLog(@"%@", todo.email);
-                [self.filteredTodos addObject:todo];
+                [test addObject:todo];
+//                [self.filteredTodos addObject:todo];
             }
         }
-        
+        [self setFilteredTodos:test];
         [self.tableView reloadData];
     }];
-    
-
 }
 
 -(void)checkEmail {

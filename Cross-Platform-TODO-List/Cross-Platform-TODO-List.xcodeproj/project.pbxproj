@@ -84,6 +84,7 @@
 
 /* Begin PBXFileReference section */
 		3A7A484BBA35367A6BE7614F /* Pods-Cross-Platform-TODO-List.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cross-Platform-TODO-List.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cross-Platform-TODO-List/Pods-Cross-Platform-TODO-List.release.xcconfig"; sourceTree = "<group>"; };
+		BC38B7E81EC659710090A38B /* Credentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Credentials.h; sourceTree = "<group>"; };
 		BC9E6D971EC2341F002A3F67 /* WatchKit-TODO-List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WatchKit-TODO-List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC9E6D9A1EC2341F002A3F67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		BC9E6D9C1EC2341F002A3F67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -123,7 +124,6 @@
 		BCE59C641EC369F3004C8098 /* DetailInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailInterfaceController.m; sourceTree = "<group>"; };
 		BCE59C661EC36E13004C8098 /* TVDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TVDetailViewController.h; sourceTree = "<group>"; };
 		BCE59C671EC36E13004C8098 /* TVDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TVDetailViewController.m; sourceTree = "<group>"; };
-		BCE59C691EC382E7004C8098 /* Credentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Credentials.h; sourceTree = "<group>"; };
 		BCE59C6A1EC38435004C8098 /* FirebaseAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirebaseAPI.h; sourceTree = "<group>"; };
 		BCE59C6B1EC38435004C8098 /* FirebaseAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirebaseAPI.m; sourceTree = "<group>"; };
 		BCE59C6D1EC3AF18004C8098 /* CompletedTodoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompletedTodoViewController.h; sourceTree = "<group>"; };
@@ -259,9 +259,9 @@
 				BCE59C4D1EC246C8004C8098 /* AppDelegate.h */,
 				BCE59C4E1EC246C8004C8098 /* AppDelegate.m */,
 				BCE59C531EC246C8004C8098 /* Main.storyboard */,
-				BCE59C691EC382E7004C8098 /* Credentials.h */,
 				BCE59C6A1EC38435004C8098 /* FirebaseAPI.h */,
 				BCE59C6B1EC38435004C8098 /* FirebaseAPI.m */,
+				BC38B7E81EC659710090A38B /* Credentials.h */,
 				BCE59C661EC36E13004C8098 /* TVDetailViewController.h */,
 				BCE59C671EC36E13004C8098 /* TVDetailViewController.m */,
 				BCE59C5C1EC248B2004C8098 /* TVHomeViewController.h */,
