@@ -87,6 +87,8 @@
         NSLog(@"Error signing out: %@", signOutError);
         return;
     }
+    LoginViewController *loginController = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+    [self presentViewController:loginController animated:YES completion:nil];
 }
 
 - (IBAction)plusButtonPressed:(id)sender {
