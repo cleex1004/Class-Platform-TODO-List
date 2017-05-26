@@ -20,7 +20,7 @@
 
 @property(nonatomic) FIRDatabaseHandle allTodosHandler;
 
-@property (weak, nonatomic) IBOutlet UIView *containerView;
+
 @property (weak, nonatomic) IBOutlet UITableView *todoTableView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightConstraint;
 
@@ -83,7 +83,7 @@
             [self.allTodos addObject:todo];
             [self.todoTableView reloadData];
             
-            NSLog(@"Todo Title: %@ - Content: %@ - Completed: %@", todo.title, todo.content, todo.completed);
+            NSLog(@"Todo Title: %@ - Content: %@ - Completed: %@ - Email: %@", todo.title, todo.content, todo.completed, todo.email);
         }
     }];
 }
@@ -101,13 +101,11 @@
 
 - (IBAction)plusButtonPressed:(id)sender {
     if (self.heightConstraint.constant == 0) {
-//        self.containerView.hidden = NO;
         self.heightConstraint.constant = 160;
         [UIView animateWithDuration:0.6 animations:^{
             [self.view layoutIfNeeded];
         }];
     } else {
-//        self.containerView.hidden = YES;
         self.heightConstraint.constant = 0;
         [UIView animateWithDuration:0.6 animations:^{
             [self.view layoutIfNeeded];

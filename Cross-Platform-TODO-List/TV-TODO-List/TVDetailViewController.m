@@ -13,6 +13,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *contentLabel;
+@property (weak, nonatomic) IBOutlet UILabel *completedLabel;
 
 @end
 
@@ -22,7 +23,7 @@
     [super viewDidLoad];
     self.titleLabel.text = self.currentTodo.title;
     self.contentLabel.text = self.currentTodo.content;
-//    [self.titleLabel setText:self.currentTodo.title];
+    self.completedLabel.text = [NSString stringWithFormat:@"COMPLETED: %@", self.currentTodo.completed];
     // Do any additional setup after loading the view.
 }
 

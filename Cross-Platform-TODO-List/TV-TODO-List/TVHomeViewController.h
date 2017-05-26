@@ -10,4 +10,6 @@
 
 @interface TVHomeViewController : UIViewController
 
+@property (strong, nonatomic) NSString *email;
+
 @end
