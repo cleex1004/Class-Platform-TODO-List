@@ -23,55 +23,55 @@
 
 @implementation TVHomeViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    self.tableView.dataSource = self;
-    self.tableView.delegate = self;
-    self.filteredTodos = [[NSMutableArray<Todo *> alloc]init];
-    __block NSMutableArray<Todo *> *test = [[NSMutableArray<Todo *> alloc]init];
-    [FirebaseAPI fetchAllTodos:^(NSArray<Todo *> *allTodos) {
-        NSLog(@"%@", allTodos);
-        NSLog(@"%@", self.email);
-        self.allTodos = allTodos;
-        for (Todo *todo in self.allTodos) {
-            if (todo.email == self.email) {
-                NSLog(@"%@", todo.email);
-                [test addObject:todo];
-            }
-        }
-        [self setFilteredTodos:test];
-        
-        [self.tableView reloadData];
-    }];
-
-//    [self.tableView reloadData];
-}
-
-//-(void)viewDidAppear:(BOOL)animated {
-//    [super viewDidAppear:YES];
-//    
-//    [self checkEmail];
-//}
-
--(void)viewWillAppear:(BOOL)animated {
+-(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
     [self checkEmail];
 }
 
-//-(void)filterByEmail {
-//    for (Todo *todo in self.allTodos) {
-//        if (todo.email == self.email) {
-//            NSLog(@"%@", todo.email);
-//            [self.filteredTodos addObject:todo];
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:YES];
+//    self.filteredTodos = [[NSMutableArray<Todo *> alloc]init];
+//    [FirebaseAPI fetchAllTodos:^(NSArray<Todo *> *allTodos) {
+//        NSLog(@"new todos: %@", allTodos);
+//        NSLog(@"logged email: %@", self.email);
+//        self.allTodos = allTodos;
+//        for (Todo *todo in self.allTodos) {
+//            if (todo.email == self.email) {
+//                NSLog(@"todo email: %@", todo.email);
+//                [self.filteredTodos addObject:todo];
+//                [self.tableView reloadData];
+//            }
+//            
 //        }
-//    }
-//}
+//    }];
+
+}
 
 -(void)checkEmail {
     if (!self.email) {
         EmailViewController *emailVC = [self.storyboard instantiateViewControllerWithIdentifier:@"EmailViewController"];
         [self presentViewController:emailVC animated:YES completion:nil];
     }
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+    self.filteredTodos = [[NSMutableArray<Todo *> alloc]init];
+    [FirebaseAPI fetchAllTodos:^(NSArray<Todo *> *allTodos) {
+        NSLog(@"new todos: %@", allTodos);
+        NSLog(@"logged email: %@", self.email);
+        self.allTodos = allTodos;
+        for (Todo *todo in self.allTodos) {
+            if (todo.email == self.email) {
+                NSLog(@"todo email: %@", todo.email);
+                [self.filteredTodos addObject:todo];
+                [self.tableView reloadData];
+            }
+            
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -104,21 +104,5 @@
     [self presentViewController:newVC animated:YES completion:nil];
 }
 
-
 @end
 
-//-(NSArray<Todo *> *)allTodos{
-//    Todo *firstTodo = [[Todo alloc]init];
-//    firstTodo.title = @"First Todo";
-//    firstTodo.content = @"This is a todo.";
-//
-//    Todo *secondTodo = [[Todo alloc]init];
-//    secondTodo.title = @"Second Todo";
-//    secondTodo.content = @"This is a todo.";
-//
-//    Todo *thirdTodo = [[Todo alloc]init];
-//    thirdTodo.title = @"Third Todo";
-//    thirdTodo.content = @"This is a todo.";
-//
-//    return @[firstTodo, secondTodo, thirdTodo];
-//}

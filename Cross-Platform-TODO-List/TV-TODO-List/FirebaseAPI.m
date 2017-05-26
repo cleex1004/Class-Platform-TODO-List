@@ -9,6 +9,7 @@
 #import "FirebaseAPI.h"
 #import "Credentials.h"
 
+
 @implementation FirebaseAPI
 
 +(void)fetchAllTodos:(AllTodosCompletion)completion {
@@ -18,13 +19,14 @@
     
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration ephemeralSessionConfiguration]];
     
-    [session dataTaskWithURL:databaseURL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    [[session dataTaskWithURL:databaseURL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         NSDictionary *rootObject = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
 //        NSLog(@"ROOT OBJECT:%@", rootObject);
         
         NSMutableArray *allTodos = [[NSMutableArray alloc]init];
         
         for (NSDictionary *userTodosDictionary in [rootObject allValues]) {
+            NSLog(@"%@",rootObject);
             NSArray *userTodos = [userTodosDictionary[@"todos"] allValues];
             
             for (NSDictionary *todoDictionary in userTodos) {
@@ -50,7 +52,7 @@
                 completion(allTodos);
             }); //GCD
         }
-    }]; // resume];
+    }] resume];
 }
 
 @end

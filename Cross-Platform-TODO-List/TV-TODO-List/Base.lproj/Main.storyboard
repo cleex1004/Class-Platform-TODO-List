@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="JgA-ri-1rn">
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="JgA-ri-1rn">
     <device id="appleTV" orientation="landscape">
         <adaptation id="light"/>
     </device>
     <dependencies>
         <deployment identifier="tvOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--TODO LIST-->
+        <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="TVHomeViewController" id="BYZ-38-t0r" customClass="TVHomeViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TVHomeViewController" automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="TVHomeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -21,32 +22,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="66" sectionFooterHeight="66" translatesAutoresizingMaskIntoConstraints="NO" id="3KB-vh-SIC">
-                                <rect key="frame" x="100" y="245" width="1720" height="735"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="66" sectionFooterHeight="66" translatesAutoresizingMaskIntoConstraints="NO" id="OMJ-gh-lhi">
+                                <rect key="frame" x="240" y="165" width="1440" height="810"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="XbN-NL-OGA" detailTextLabel="4i9-QQ-0iY" style="IBUITableViewCellStyleSubtitle" id="cxH-MB-4cn">
-                                        <rect key="frame" x="0.0" y="66" width="1720" height="100"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="g9B-xk-yBp">
+                                        <rect key="frame" x="0.0" y="66" width="1440" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cxH-MB-4cn" id="t46-4L-QuD">
-                                            <rect key="frame" x="0.0" y="0.0" width="1704" height="100"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="g9B-xk-yBp" id="8eB-p7-4gp">
+                                            <rect key="frame" x="0.0" y="0.0" width="1424" height="66"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XbN-NL-OGA">
-                                                    <rect key="frame" x="20" y="4" width="72" height="46"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="38"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4i9-QQ-0iY">
-                                                    <rect key="frame" x="20" y="50" width="128" height="46"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="38"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
@@ -54,16 +39,15 @@
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="3KB-vh-SIC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PTw-t8-Iae"/>
-                            <constraint firstItem="3KB-vh-SIC" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="Uan-Od-Lg2"/>
-                            <constraint firstAttribute="trailing" secondItem="3KB-vh-SIC" secondAttribute="trailing" constant="100" id="b0B-Av-MiK"/>
-                            <constraint firstItem="3KB-vh-SIC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="100" id="dzO-IO-n0K"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="3KB-vh-SIC" secondAttribute="bottom" constant="100" id="xuo-Oe-fpO"/>
+                            <constraint firstItem="OMJ-gh-lhi" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="3Zh-gK-1nL"/>
+                            <constraint firstItem="OMJ-gh-lhi" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.75" id="RBk-r8-7ZN"/>
+                            <constraint firstItem="OMJ-gh-lhi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ztk-zf-xhv"/>
+                            <constraint firstItem="OMJ-gh-lhi" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.75" id="vJ0-Jf-JaS"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="TODO LIST" id="ArY-O2-V6h"/>
+                    <navigationItem key="navigationItem" id="ArY-O2-V6h"/>
                     <connections>
-                        <outlet property="tableView" destination="3KB-vh-SIC" id="1PI-pk-I7a"/>
+                        <outlet property="tableView" destination="OMJ-gh-lhi" id="NcH-8u-v80"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -196,13 +180,14 @@
                             <constraint firstItem="xOg-td-ZBC" firstAttribute="top" secondItem="7Ac-5d-780" secondAttribute="top" constant="100" id="vkp-Bd-FcP"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="BP3-NR-guD"/>
                     <connections>
                         <outlet property="emailTextField" destination="HRL-LN-xll" id="HTR-8L-n8D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9CR-n4-Hbt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2202" y="-1409"/>
+            <point key="canvasLocation" x="1305" y="-1432"/>
         </scene>
     </scenes>
 </document>
