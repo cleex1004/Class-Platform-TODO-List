@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="12029"/>
+    </dependencies>
+    <scenes>
+        <!--InterfaceController-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller identifier="InterfaceController" id="AgC-eL-Hgc" customClass="InterfaceController">
+                    <items>
+                        <group width="1" height="150" alignment="left" id="w5M-XK-aO8">
+                            <items>
+                                <table alignment="left" id="Cg6-iL-oFl">
+                                    <items>
+                                        <tableRow identifier="TodoRowController" id="Wu2-mY-dTg" customClass="TodoRowController">
+                                            <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" id="g8p-ea-8kj">
+                                                <items>
+                                                    <label width="136" alignment="left" text="Title" id="2S1-gj-TT1">
+                                                        <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                                    </label>
+                                                    <label width="136" alignment="left" text="Content" numberOfLines="0" id="KQi-e9-F5z"/>
+                                                </items>
+                                            </group>
+                                            <connections>
+                                                <outlet property="contentLabel" destination="KQi-e9-F5z" id="MWj-Ux-LVz"/>
+                                                <outlet property="titleLabel" destination="2S1-gj-TT1" id="ooE-iW-ONB"/>
+                                            </connections>
+                                        </tableRow>
+                                    </items>
+                                </table>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="table" destination="Cg6-iL-oFl" id="nFx-kR-AF1"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="153" y="131"/>
+        </scene>
+        <!--DetailInterfaceController-->
+        <scene sceneID="VIZ-YO-Agb">
+            <objects>
+                <controller identifier="DetailInterfaceController" id="Jyh-1A-9OJ" customClass="DetailInterfaceController">
+                    <items>
+                        <group width="1" height="150" alignment="left" layout="vertical" id="DTg-Vp-lQR">
+                            <items>
+                                <label width="136" alignment="left" text="Label" id="v20-mZ-aok"/>
+                                <label width="136" alignment="left" text="Label" id="8CT-sS-QQO"/>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="contentLabel" destination="8CT-sS-QQO" id="S5J-US-7Xw"/>
+                        <outlet property="titleLabel" destination="v20-mZ-aok" id="U84-c0-Vxb"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="400" y="127"/>
+        </scene>
+    </scenes>
+</document>
